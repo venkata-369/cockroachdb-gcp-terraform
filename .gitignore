@@ -1,1 +1,8 @@
-/docs
+/docs/
+
+/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.json
