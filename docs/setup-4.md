@@ -513,7 +513,7 @@ $ gcloud auth application-default print-access-token
 ya29.a0AdMD6EizyuT80rQ0rGKZoxUJqJEYCdc3fnr8jd5i-JjTMyh6HOwTKNpG92sgVUtgyAHgVzjbqZUF30JtRIzDAlC4JXvmzXIcHqP8CA2pSa3asaU5f84d_m2_xirvEyQc9_Fsfd3rEwHVwRv2wIgUo-cSXfDAJF5cnghb7XHBzjhHKC8JXfYPTJ54I_1y0s51sz4eGG0aCgYKAQESARcSFQHGX2Mi3LDPPdhlVn6aqZQ6DDHmdw0206
 
 venkat@HP-Laptop MINGW64 /e/my-learning/crdb-learning/cockroachdb-gcp-terraform (main|MERGING)
-
+```
 ```bash
 gcloud config set project crdb-learning
 ```
@@ -535,7 +535,7 @@ ya29.a0AdMD6EizyuT80rQ0rGKZoxUJqJEYCdc3fnr8jd5i-JjTMyh6HOwTKNpG92sgVUtgyAHgVzjbq
 venkat@HP-Laptop MINGW64 /e/my-learning/crdb-learning/cockroachdb-gcp-terraform (main|MERGING)
 $ gcloud config get-value project
 crdb-learning
-
+```
 
 You do **not** need:
 
