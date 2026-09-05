@@ -29,35 +29,4 @@ jobs:
         run: |
           gcloud auth list
           gcloud config set project crdb-learning
-          gcloud projects describe crdb-learningname: GCP Authentication Test
-
-on:
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  id-token: write
-
-jobs:
-  gcp-auth-test:
-    name: Test GCP Authentication
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
-
-      - name: Setup Google Cloud CLI
-        uses: google-github-actions/setup-gcloud@v2
-
-      - name: Test GCP Access
-        run: |
-          gcloud auth list
-          gcloud config set project crdb-learning
           gcloud projects describe crdb-learning
