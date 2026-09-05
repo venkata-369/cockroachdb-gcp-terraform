@@ -75,7 +75,7 @@ You **do not need `docs/` locally**.
 
 ---
 
-# 3. Create `versions.tf`
+## 3. Create `versions.tf`
 
 From Git Bash:
 
@@ -106,7 +106,7 @@ provider "google" {
 
 ---
 
-# 4. Create `variables.tf`
+## 4. Create `variables.tf`
 
 ```bash
 touch variables.tf
@@ -178,7 +178,7 @@ For production, restrict SSH to your actual public IP.
 
 ---
 
-# 5. Create `main.tf`
+## 5. Create `main.tf`
 
 ```bash
 touch main.tf
@@ -419,7 +419,7 @@ resource "google_compute_instance" "cockroach_3" {
 
 ---
 
-# 6. Create `outputs.tf`
+## 6. Create `outputs.tf`
 
 ```bash
 touch outputs.tf
@@ -500,25 +500,42 @@ Success! The configuration is valid.
 
 ---
 
-# 8. Very important — don't use the JSON key
+## 8. Very important — don't use the JSON key
 
 For local Terraform, you can authenticate with your own GCP login:
 
 ```bash
 gcloud auth application-default login
 ```
+Work Log
+```
+$ gcloud auth application-default print-access-token
+ya29.a0AdMD6EizyuT80rQ0rGKZoxUJqJEYCdc3fnr8jd5i-JjTMyh6HOwTKNpG92sgVUtgyAHgVzjbqZUF30JtRIzDAlC4JXvmzXIcHqP8CA2pSa3asaU5f84d_m2_xirvEyQc9_Fsfd3rEwHVwRv2wIgUo-cSXfDAJF5cnghb7XHBzjhHKC8JXfYPTJ54I_1y0s51sz4eGG0aCgYKAQESARcSFQHGX2Mi3LDPPdhlVn6aqZQ6DDHmdw0206
 
-Then:
+venkat@HP-Laptop MINGW64 /e/my-learning/crdb-learning/cockroachdb-gcp-terraform (main|MERGING)
 
 ```bash
 gcloud config set project crdb-learning
 ```
-
+```
+$ gcloud config get-value project
+crdb-learning
+```
 Check:
 
 ```bash
 gcloud auth application-default print-access-token
 ```
+
+Work Log
+```
+$ gcloud auth application-default print-access-token
+ya29.a0AdMD6EizyuT80rQ0rGKZoxUJqJEYCdc3fnr8jd5i-JjTMyh6HOwTKNpG92sgVUtgyAHgVzjbqZUF30JtRIzDAlC4JXvmzXIcHqP8CA2pSa3asaU5f84d_m2_xirvEyQc9_Fsfd3rEwHVwRv2wIgUo-cSXfDAJF5cnghb7XHBzjhHKC8JXfYPTJ54I_1y0s51sz4eGG0aCgYKAQESARcSFQHGX2Mi3LDPPdhlVn6aqZQ6DDHmdw0206
+
+venkat@HP-Laptop MINGW64 /e/my-learning/crdb-learning/cockroachdb-gcp-terraform (main|MERGING)
+$ gcloud config get-value project
+crdb-learning
+
 
 You do **not** need:
 
@@ -527,6 +544,18 @@ export GOOGLE_APPLICATION_CREDENTIALS=crdb-learning-28b4564feaeb.json
 ```
 
 Don't upload that key.
+
+```
+janve.369@gmail.com
+        ↓
+gcloud auth application-default login
+        ↓
+Application Default Credentials
+        ↓
+Terraform
+        ↓
+GCP project: crdb-learning
+```
 
 ---
 
