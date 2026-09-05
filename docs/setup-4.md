@@ -848,6 +848,10 @@ Then create:
 
 Commit and push:
 
+```
+git fetch origin main
+```
+
 ```bash
 git add main.tf variables.tf outputs.tf versions.tf .github/workflows/terraform.yml
 git commit -m "Add Terraform GCP infrastructure"
