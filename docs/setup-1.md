@@ -304,6 +304,22 @@ gcloud iam service-accounts add-iam-policy-binding \
   --member="principalSet://iam.googleapis.com/projects/117351038489/locations/global/workloadIdentityPools/github-pool/attribute.repository/venkata-369/cockroachdb-gcp-terraform"
 ```
 
+Expected
+```
+janve_369@cloudshell:~ (crdb-learning)$ gcloud iam service-accounts add-iam-policy-binding \
+  terraform-github@crdb-learning.iam.gserviceaccount.com \
+  --project=crdb-learning \
+  --role="roles/iam.workloadIdentityUser" \
+  --member="principalSet://iam.googleapis.com/projects/117351038489/locations/global/workloadIdentityPools/github-pool/attribute.repository/venkata-369/cockroachdb-gcp-terraform"
+Updated IAM policy for serviceAccount [terraform-github@crdb-learning.iam.gserviceaccount.com].
+bindings:
+- members:
+  - principalSet://iam.googleapis.com/projects/117351038489/locations/global/workloadIdentityPools/github-pool/attribute.repository/venkata-369/cockroachdb-gcp-terraform
+  role: roles/iam.workloadIdentityUser
+etag: BwZauwwFXwk=
+version: 1
+```
+
 ### What does this command mean?
 
 The important section is:
@@ -347,6 +363,18 @@ Run:
 gcloud iam service-accounts get-iam-policy \
   terraform-github@crdb-learning.iam.gserviceaccount.com \
   --project=crdb-learning
+```
+Expected
+```
+janve_369@cloudshell:~ (crdb-learning)$ gcloud iam service-accounts get-iam-policy \
+  terraform-github@crdb-learning.iam.gserviceaccount.com \
+  --project=crdb-learning
+bindings:
+- members:
+  - principalSet://iam.googleapis.com/projects/117351038489/locations/global/workloadIdentityPools/github-pool/attribute.repository/venkata-369/cockroachdb-gcp-terraform
+  role: roles/iam.workloadIdentityUser
+etag: BwZauwwFXwk=
+version: 1
 ```
 
 Look for:
