@@ -98,3 +98,24 @@ git push origin main
 ```
 
 Send me exactly what you get from `git push origin main`.
+
+
+```
+nano .gitignore
+/docs/
+
+/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.json
+```
+CTL + O = Save
+Enter
+CTL + X = Exit 
+
+```
+git add .gitignore
+git commit -m "Ignore Terraform local files"
+```
