@@ -410,6 +410,15 @@ Because we know your project number, the result should be exactly:
 ```text
 projects/117351038489/locations/global/workloadIdentityPools/github-pool/providers/github-provider
 ```
+Work-log
+```
+janve_369@cloudshell:~ (crdb-learning)$ gcloud iam workload-identity-pools providers describe github-provider \
+  --project=crdb-learning \
+  --location=global \
+  --workload-identity-pool=github-pool \
+  --format="value(name)"
+projects/117351038489/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+```
 
 ### This is what we will put into GitHub.
 
