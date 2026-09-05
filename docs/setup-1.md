@@ -448,7 +448,7 @@ Create the first secret.
 GCP_WORKLOAD_IDENTITY_PROVIDER
 ```
 
-**Value:**
+**Secret:**
 
 ```text
 projects/117351038489/locations/global/workloadIdentityPools/github-pool/providers/github-provider
@@ -466,7 +466,7 @@ Create the second secret.
 GCP_SERVICE_ACCOUNT
 ```
 
-**Value:**
+**Secret:**
 
 ```text
 terraform-github@crdb-learning.iam.gserviceaccount.com
