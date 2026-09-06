@@ -80,7 +80,7 @@ resource "google_compute_firewall" "allow_cockroach" {
   allow {
     protocol = "tcp"
     ports = [
-      "25267",
+      "26257",
       "26257"
     ]
   }
